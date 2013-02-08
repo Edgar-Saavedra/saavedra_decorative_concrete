@@ -33,17 +33,26 @@ header {
 }
 header #headerTop {
   height: 10em;
-  background-image: url('../images/saavedraLogo-01.png');
-  background-repeat: no-repeat;
+  display: block;
+  position: relative;
+}
+header #headerTop #logo img {
+  height: 9.8em;
+  width: auto;
+  display: block;
+  float: left;
+  clear: none;
+  padding: 0 0 0 0;
 }
 header #headerTop #headerBackgroundImage {
+  overflow: hidden;
+  display: inline-block;
   float: right;
   height: 10em;
   width: 39em;
   background-position: right;
   background-image: url('../images/headerBg-01.png');
   background-repeat: no-repeat;
-  clear: both;
 }
 header #headerTop #headerBackgroundImage a img {
   position: relative;
@@ -106,10 +115,40 @@ header #headerBottom .navSlash {
 header #headerBottom .navSlash :hover {
   color: #000;
 }
-header #headerBottom nav + a {
+header #headerBottom nav + a#estimate-button {
+  display: inline-block;
+  height: 66px;
+  width: 66px;
+  background-image: url(../images/estimateButton2-01-01.png);
+  background-repeat: no-repeat;
+  background-position: center;
   position: absolute;
-  top: 0px;
+  top: -15px;
   right: -35px;
+}
+header #headerBottom #estimate-button:hover {
+  background-image: url(../images/estimateButton2Hover-01.png);
+}
+header #headerBottom #estimate-button:active {
+  background-image: url(../images/estimateButton2Active.png);
+}
+/*end Header and Nav*/
+/**gallery thumbnails**/
+#thumbnails {
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 10px 0;
+}
+#thumbnails #thumbnail-container {
+  padding: 5px;
+  width: 100%;
+  overflow: hidden;
+}
+#thumbnails #thumbnail-container img {
+  height: 90px;
+  width: auto;
+  float: left;
+  margin: 0 5px 0 0;
 }
 /****Main Gallery***/
 #mainGallery {
@@ -117,7 +156,7 @@ header #headerBottom nav + a {
   width: 100%;
   background-color: #000;
   padding: 0 0 0px 0;
-  margin: 0 0 25px 0;
+  margin: 0 0 0px 0;
 }
 #mainGallery img {
   border: none;
@@ -127,13 +166,40 @@ header #headerBottom nav + a {
   height: 100%;
   width: auto;
 }
+/*end: Main Gallery*/
+/**Galery Description*/
+.photo-description {
+  border-top: dotted 1px;
+  margin: 5px 0 0 0 ;
+}
+.photo-description .photo-description-container {
+  font-family: Arial, sans-serif;
+  padding: 0 10px 0 10px;
+}
+.photo-description .photo-description-container ul {
+  margin: 0 0 2px 0;
+}
+.photo-description .photo-description-container ul li {
+  color: #333;
+  font-size: .75em;
+  font-weight: bold;
+}
+.photo-description .photo-description-container h2 {
+  margin: 5px 0 3px 0;
+  color: #724900;
+  font-weight: bold;
+}
+.photo-description .photo-description-container p {
+  margin: 0 0 10px 0;
+}
 /****Main Content***/
 article #mainContent {
   display: inline-block;
   width: 404px;
   margin: 0 10px 0 0px;
-  padding: 0 0 0 20px;
   float: left;
+  padding: 0 0 20px 10px;
+  border-left: solid 1px;
 }
 article #mainContent h1 {
   font-weight: bold;
@@ -141,8 +207,12 @@ article #mainContent h1 {
   font-size: 2em;
   margin: 0 0 20px 0;
 }
+article #mainContent p {
+  font-size: .90em;
+  color: #444;
+}
 aside #saleSection {
-  width: 170px;
+  width: 167px;
   float: left;
   clear: right;
 }
@@ -175,8 +245,6 @@ aside #blog {
   display: block;
   overflow: hidden;
   width: 160px;
-  padding: 0 5px 20px 0;
-  border-right: solid 1px;
 }
 aside #blog h2 {
   font-size: 1.5em;
@@ -188,11 +256,154 @@ aside #blog h3 {
   font-weight: bold;
   margin: 10px 0 0 0;
 }
+aside #blog p {
+  margin: 5px 0 0 0;
+  padding: 0 5px 0 0 ;
+  color: #444;
+  font-size: .80em;
+}
 aside #blog p:after {
   content: "\A \A Read More";
   color: #D35C02;
   white-space: pre;
 }
+/*****About Page*****/
+article #About-Content-Wrap {
+  padding: 0 0 0 0;
+}
+article #About-Content-Wrap #profile-alberto {
+  display: inline-block;
+  float: left;
+  width: 180px;
+  margin: 0 10px 0 0px;
+}
+article #About-Content-Wrap #profile-alberto img {
+  overflow: hidden;
+  width: 180px;
+}
+article #About-Content-Wrap #profile-alberto h3 {
+  font-size: 1.25em;
+}
+article #About-Content-Wrap #mainContent-About {
+  display: inline-block;
+  width: 470px;
+  margin: 0 10px 0 0px;
+  float: left;
+  padding: 0 80px 20px 10px;
+  border-right: solid 1px;
+  font-family: Arial, sans-serif;
+}
+article #About-Content-Wrap #mainContent-About h1 {
+  font-weight: bold;
+  color: #333;
+  font-size: 2em;
+  margin: 0 0 10px 0;
+}
+article #About-Content-Wrap #mainContent-About h2 {
+  font-weight: bold;
+  color: #555;
+  font-size: 1.5em;
+  margin: 0 0 10px 0;
+}
+article #About-Content-Wrap #mainContent-About h3 {
+  color: #555;
+  font-size: 1em;
+  margin: 20px 0 0px 0;
+}
+article #About-Content-Wrap #mainContent-About p {
+  font-size: .90em;
+  color: #444;
+}
+article #About-Content-Wrap #mainContent-About li {
+  font-size: .80em;
+  color: black;
+}
+/*****Contact Page****/
+article #mainContent-Contact {
+  display: inline-block;
+  width: 47%;
+  margin: 0 0px 0 0px;
+  float: left;
+  padding: 0 10px 0 10px;
+}
+article #mainContent-Contact h1 {
+  font-weight: bold;
+  color: #333;
+  font-size: 2em;
+  margin: 0 0 20px 0;
+}
+article #mainContent-Contact p {
+  font-size: .90em;
+  color: #444;
+}
+aside #Contact-Form-Section {
+  display: inline-block;
+  width: 47%;
+  float: left;
+  margin: 0 0 0 0px;
+  padding: 0 0 0 10px;
+  border-left: solid 2px;
+  display: inline-block;
+}
+aside #Contact-Form-Section h2 {
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+aside #contat-page-contact {
+  border-top: solid 1px;
+  display: inline-block;
+  float: left;
+  margin: 20px 0 0 0;
+  width: 100%;
+}
+aside #contat-page-contact ul {
+  margin: 10px 0 30px 0;
+}
+aside #contat-page-contact ul li {
+  font-family: Arial, sans-serif;
+  font-size: .85em;
+}
+/****Estimates Page****/
+article #mainContent-Estimate {
+  display: inline-block;
+  width: 47%;
+  margin: 0 0px 0 0px;
+  float: left;
+  padding: 0 0px 0 10px;
+}
+article #mainContent-Estimate h1 {
+  font-weight: bold;
+  color: #333;
+  font-size: 2em;
+  margin: 0 0 20px 0;
+}
+article #mainContent-Estimate p {
+  font-size: .90em;
+  color: #444;
+}
+aside #Estimate-Form-Section {
+  border-left: solid 1px;
+  padding: 0 0 0 10px;
+  float: left;
+  display: inline-block;
+  width: 48%;
+  margin: 0 0 0 10px;
+}
+aside #Estimate-Form-Section h2 {
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+#thumbnail-container-contact {
+  width: 90%;
+  margin: 0 auto;
+}
+#thumbnail-container-contact img {
+  margin: 5px;
+  float: left;
+  height: 100px;
+  width: auto;
+}
+/********Begin footer styles********/
 #estimateButtonfooter {
   position: relative;
   width: 100%;
@@ -219,9 +430,10 @@ footer {
   padding: 5px 0 5px 0;
   margin: 30px 0 0 0;
   width: 100%;
-  display: block;
+  display: inline-block;
   float: left;
   background-color: black;
+  min-height: 100%;
 }
 #footerContainer {
   display: block;
@@ -232,13 +444,35 @@ footer {
   font-size: 1em;
   font-weight: normal;
 }
+#footerContainer #footerBottom {
+  height: 50px;
+  overflow: hidden;
+  width: 100%;
+  background-image: url(../images/sdc_logo_COLOR-white.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  /*#footer-logo{
+				display: inline-block;
+				height: 50px;
+				width: 460px;
+				float:left;
+				background-image: url(../images/sdc_logo_COLOR-white-01.png);
+				background-repeat: no-repeat;
+				background-position: center;
+			}*/
+
+}
 #footerContainer #footerBottom #footerLeft {
   float: left;
   text-align: left;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
 }
 #footerContainer #footerBottom #footerRight {
   float: right;
   text-align: right;
   font-size: .75em;
   font-weight: normal;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
 }

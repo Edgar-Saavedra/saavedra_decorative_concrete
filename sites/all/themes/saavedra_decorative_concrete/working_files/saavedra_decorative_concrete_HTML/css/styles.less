@@ -34,16 +34,29 @@ header{
 	height:248px;
 	#headerTop{
 		height: 10em;
-		background-image:url('../images/saavedraLogo-01.png');
-		background-repeat:  no-repeat;
+		display: block;
+		position: relative;
+			
+			#logo{
+				img{
+					height: 9.8em;
+					width: auto;
+					display: block;
+					float: left;
+					clear: none;
+					padding: 0 0 0 0;
+				}
+			
+		}
 			#headerBackgroundImage{
+				overflow: hidden;
+				display: inline-block;
 				float: right;
 				height: 10em;
 				width: 39em;
 				background-position: right;
 				background-image:url('../images/headerBg-01.png');
 				background-repeat: no-repeat;
-				clear: both;
 				a{
 					img{
 						position: relative;
@@ -110,12 +123,41 @@ header{
 			color:#000;
 		}
 	 }
-	 nav+a{
+	 nav+a#estimate-button{
+	 	display: inline-block;
+	 	height: 66px;
+	 	width: 66px;
+	 	background-image:url(../images/estimateButton2-01-01.png);
+	 	background-repeat: no-repeat;
+	 	background-position: center;
 	 	position: absolute;
-	 	top:0px;
+	 	top:-15px;
 	 	right: -35px;
 	 }
+	 #estimate-button:hover{
+	 	background-image: url(../images/estimateButton2Hover-01.png);
+	 }
+	 #estimate-button:active{
+	 	background-image: url(../images/estimateButton2Active.png);
+	 }
   }
+}/*end Header and Nav*/
+/**gallery thumbnails**/
+#thumbnails{
+	display: inline-block;
+	width: 100%;
+	margin: 0 0 10px 0;
+	#thumbnail-container{
+		padding: 5px;
+		width: 100%;
+		overflow: hidden;
+		img{
+			height: 90px;
+			width: auto;
+			float: left;
+			margin: 0 5px 0 0;
+		}
+	}	
 }
 /****Main Gallery***/
 #mainGallery{
@@ -123,7 +165,7 @@ header{
 	width:100%;
 	background-color: #000;
 	padding: 0 0 0px 0;
-	margin: 0 0 25px 0;
+	margin: 0 0 0px 0;
 	img{
 		border: none;
 		display: block;
@@ -133,19 +175,50 @@ header{
 		width: auto;
 	}	
 }
+/*end: Main Gallery*/
+/**Galery Description*/
+.photo-description{
+border-top: dotted 1px;
+margin: 5px 0 0 0 ;
+	.photo-description-container{
+		font-family: Arial, sans-serif;
+		padding: 0 10px 0 10px;
+		ul{
+			margin: 0 0 2px 0;
+			li{
+				color: #333;
+				font-size: .75em;
+				font-weight:bold;
+			}
+		}
+		h2{
+			margin: 5px 0 3px 0;
+			color: #724900;
+			font-weight: bold;
+		}
+		p{
+			margin: 0 0 10px 0;
+		}
+	}
+}
 /****Main Content***/
 article{
 	#mainContent{
 		display: inline-block;
 		width: 404px;
 		margin: 0 10px 0 0px;
-		padding: 0 0 0 20px;
 		float: left;
+		padding: 0 0 20px 10px;
+		border-left: solid 1px;
 		h1{
 			font-weight:bold;
 			color: #333;
 			font-size: 2em;
 			margin: 0 0 20px 0;
+		}
+		p{
+			font-size: .90em;
+			color: #444;
 		}
 	}
 }
@@ -153,7 +226,7 @@ article{
 
 aside{
 	#saleSection{
-		width: 170px;
+		width: 167px;
 		float:left;
 		clear: right;
 		 h2{
@@ -186,8 +259,7 @@ aside{
 		display: block;
 		overflow: hidden;
 		width: 160px;
-		padding: 0 5px 20px 0;
-		border-right: solid 1px;
+		
 		h2{	
 			font-size: 1.5em;
 			color: #333;
@@ -197,6 +269,12 @@ aside{
 		h3{
 			font-weight: bold;
 			margin: 10px 0 0 0;
+		}
+		p{
+			margin: 5px 0 0 0;
+			padding: 0 5px 0 0 ;
+			color: #444;
+			font-size: .80em;
 		}
 		
 				p:after{
@@ -209,6 +287,156 @@ aside{
 	}
 
 }
+/*****About Page*****/
+article{
+	#About-Content-Wrap{
+		padding: 0 0 0 0;
+		#profile-alberto{
+			display: inline-block;
+			float: left;
+			width: 180px;
+			margin: 0 10px 0 0px;
+			img{
+				overflow: hidden;
+				width: 180px;
+			}
+			h3{
+				font-size: 1.25em;
+			}
+		}
+	#mainContent-About{
+		display: inline-block;
+		width: 470px;
+		margin: 0 10px 0 0px;
+		float: left;
+		padding: 0 80px 20px 10px;
+		border-right: solid 1px;
+		font-family: Arial, sans-serif;
+		h1{
+			font-weight:bold;
+			color: #333;
+			font-size: 2em;
+			margin: 0 0 10px 0;
+		}
+		h2{
+			font-weight:bold;
+			color: #555;
+			font-size: 1.5em;
+			margin: 0 0 10px 0;
+
+		}
+		h3{
+			color: #555;
+			font-size: 1em;
+			margin: 20px 0 0px 0;
+		}
+		p{
+
+			font-size: .90em;
+			color: #444;
+		}
+		li{
+			font-size: .80em;
+			color: black;
+		}
+	}
+   }
+}
+/*****Contact Page****/
+article{
+	#mainContent-Contact{
+		display: inline-block;
+		width: 47%;
+		margin: 0 0px 0 0px;
+		float: left;
+		padding: 0 10px 0 10px;
+		h1{
+			font-weight:bold;
+			color: #333;
+			font-size: 2em;
+			margin: 0 0 20px 0;
+		}
+		p{
+			font-size: .90em;
+			color: #444;
+		}
+	}
+}
+aside{
+
+	#Contact-Form-Section{
+		display: inline-block;
+	width: 47%;
+	float: left;
+	margin: 0 0 0 0px;
+	padding: 0 0 0 10px;
+	border-left: solid 2px;
+		display: inline-block;
+		h2{
+			font-weight: bold;
+			margin: 0 0 10px 0;
+		}
+	}
+	#contat-page-contact{
+		border-top: solid 1px;
+		display: inline-block;
+		float: left;
+		margin: 20px 0 0 0;
+		width: 100%;
+		ul{
+			margin: 10px 0 30px 0;
+			li{
+				font-family: Arial, sans-serif;
+				font-size: .85em;
+			}
+		}
+	}
+}
+/****Estimates Page****/
+article{
+	#mainContent-Estimate{
+		display: inline-block;
+		width: 47%;
+		margin: 0 0px 0 0px;
+		float: left;
+		padding: 0 0px 0 10px;
+		h1{
+			font-weight:bold;
+			color: #333;
+			font-size: 2em;
+			margin: 0 0 20px 0;
+		}
+		p{
+			font-size: .90em;
+			color: #444;
+		}
+	}
+}
+aside{
+	#Estimate-Form-Section{
+		border-left: solid 1px;
+		padding: 0 0 0 10px;
+		float: left;
+		display: inline-block;
+		width: 48%;
+		margin: 0 0 0 10px;
+		h2{
+			font-weight: bold;
+			margin: 0 0 10px 0;
+		}
+	}
+}
+#thumbnail-container-contact{
+	width: 90%;
+	margin: 0 auto;
+	img{
+		margin: 5px;
+		float: left;
+		height: 100px;
+		width: auto;
+	}
+}
+/********Begin footer styles********/
 #estimateButtonfooter{
 	position: relative;
 	width: 100%;
@@ -235,9 +463,10 @@ footer{
 	padding: 5px 0 5px 0;
 	margin: 30px 0 0 0;
 	width: 100%;
-	display: block;
+	display: inline-block;
 	float: left;
 	background-color: black;
+	min-height: 100%;
 }
 #footerContainer{
 		display: block;
@@ -248,16 +477,34 @@ footer{
 		font-size: 1em;
 		font-weight: normal;
 		#footerBottom{
+			height: 50px;
+			overflow: hidden;
+			width: 100%;
+			background-image: url(../images/sdc_logo_COLOR-white.svg);
+				background-repeat: no-repeat;
+				background-position: center;
 			#footerLeft{
 				float: left;
 				text-align: left;
+				font-family: Arial, sans-serif;
+				font-size: 10px;
 			}
 			#footerRight{
 				float: right;
 				text-align: right;
 				font-size: .75em;
 				font-weight: normal;
+				font-family: Arial, sans-serif;
+				font-size: 10px;
 			}
-			
+			/*#footer-logo{
+				display: inline-block;
+				height: 50px;
+				width: 460px;
+				float:left;
+				background-image: url(../images/sdc_logo_COLOR-white-01.png);
+				background-repeat: no-repeat;
+				background-position: center;
+			}*/
 		}
 	}
