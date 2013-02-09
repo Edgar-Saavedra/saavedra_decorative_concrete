@@ -10,8 +10,12 @@ body p {
 }
 /*outer body container*/
 #bodyContainer {
-  /**MAIN CONTENT CONTAINER**/
-
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  overflow: auto;
+  top: 0;
 }
 #bodyContainer #headerLine {
   position: absolute;
@@ -21,11 +25,18 @@ body p {
   border-bottom: solid 1px;
   z-index: -25;
 }
-#bodyContainer #container {
+/**MAIN CONTENT CONTAINER**/
+#container {
   margin: 0 auto 0 auto;
   width: 770px;
   display: block;
   clear: both;
+}
+.upperContentWrapperGlow {
+  -moz-box-shadow: 0px 0px 20px #888;
+  -webkit-box-shadow: 0px 0px 20px #888;
+  box-shadow: 0px 0px 20px #888;
+  overflow: hidden;
 }
 /***HEADER***/
 header {
@@ -35,6 +46,7 @@ header #headerTop {
   height: 10em;
   display: block;
   position: relative;
+  border-bottom: solid 1px;
 }
 header #headerTop #logo img {
   height: 9.8em;
@@ -49,7 +61,7 @@ header #headerTop #headerBackgroundImage {
   display: inline-block;
   float: right;
   height: 10em;
-  width: 39em;
+  width: 38em;
   background-position: right;
   background-image: url('../images/headerBg-01.png');
   background-repeat: no-repeat;
@@ -57,15 +69,16 @@ header #headerTop #headerBackgroundImage {
 header #headerTop #headerBackgroundImage a img {
   position: relative;
   float: right;
-  top: 8.5em;
-  right: 4.125em;
+  top: 7.9em;
+  right: 5.125em;
 }
 header #headerTop #headerBackgroundImage a img[alt*='Friend'] {
-  height: 1em;
+  height: 1.5em;
+  top: 8.3em;
 }
 header #headerTop #headerBackgroundImage a img[alt*='Yelp'] {
-  height: 1.38em;
-  right: 4.65em;
+  height: 2.08em;
+  right: 5.65em;
 }
 header #headerBottom {
   position: relative;
@@ -125,6 +138,7 @@ header #headerBottom nav + a#estimate-button {
   position: absolute;
   top: -15px;
   right: -35px;
+  z-index: 9999;
 }
 header #headerBottom #estimate-button:hover {
   background-image: url(../images/estimateButton2Hover-01.png);
@@ -157,6 +171,9 @@ header #headerBottom #estimate-button:active {
   background-color: #000;
   padding: 0 0 0px 0;
   margin: 0 0 0px 0;
+  -moz-box-shadow: 0px 0px 20px #888;
+  -webkit-box-shadow: 0px 0px 20px #888;
+  box-shadow: 0px 0px 20px #888;
 }
 #mainGallery img {
   border: none;
@@ -196,7 +213,7 @@ header #headerBottom #estimate-button:active {
 article #mainContent {
   display: inline-block;
   width: 404px;
-  margin: 0 10px 0 0px;
+  margin: 0 10px 0 -1px;
   float: left;
   padding: 0 0 20px 10px;
   border-left: solid 1px;
@@ -213,8 +230,8 @@ article #mainContent p {
 }
 aside #saleSection {
   width: 167px;
+  overflow: hidden;
   float: left;
-  clear: right;
 }
 aside #saleSection h2 {
   font-size: 1.25em;
@@ -245,6 +262,8 @@ aside #blog {
   display: block;
   overflow: hidden;
   width: 160px;
+  margin: 0 0 0 10px;
+  border-right: solid 1px;
 }
 aside #blog h2 {
   font-size: 1.5em;
@@ -280,6 +299,9 @@ article #About-Content-Wrap #profile-alberto {
 article #About-Content-Wrap #profile-alberto img {
   overflow: hidden;
   width: 180px;
+  -moz-box-shadow: 0px 0px 20px #888;
+  -webkit-box-shadow: 0px 0px 20px #888;
+  box-shadow: 0px 0px 20px #888;
 }
 article #About-Content-Wrap #profile-alberto h3 {
   font-size: 1.25em;
@@ -403,15 +425,77 @@ aside #Estimate-Form-Section h2 {
   height: 100px;
   width: auto;
 }
+/********Blog Pages**********/
+#blogMainContent {
+  width: 579px;
+  display: inline-block;
+  margin: 0 10px 0 -1px;
+  float: left;
+  padding: 0 0 20px 10px;
+  border-left: solid 1px;
+  overflow: hidden;
+}
+#blogMainContent #blogText {
+  position: relative;
+  display: inline-block;
+  float: left;
+  width: 400px;
+}
+#blogMainContent #blogText h1 {
+  font-weight: bold;
+  color: #333;
+  font-size: 2em;
+  margin: 0 0 20px 0;
+}
+#blogMainContent #blogText p {
+  font-size: .90em;
+  color: #444;
+}
+#blogMainContent #blog_photo {
+  clear: none;
+  display: inline-block;
+  height: auto;
+  float: right;
+  width: 167px;
+}
+#blogMainContent #blog_photo .blogPic {
+  overflow: hidden;
+  display: block;
+  width: 47%;
+  height: 65px;
+  float: left;
+  margin: 0 5px 10px 0;
+  position: relative;
+  -moz-box-shadow: 0px 0px 7px #888;
+  -webkit-box-shadow: 0px 0px 7px #888;
+  box-shadow: 0px 0px 7px #888;
+}
+#blogMainContent #blog_photo .blogPic img {
+  height: 100%;
+}
+#blogMainContent #breadcrumbs {
+  margin: 10px 0 0 0 ;
+}
+#blogMainContent #breadcrumbs span {
+  font-size: 3em;
+  display: inline-block;
+}
+#blogMainContent #breadcrumbs span#breadCrumbText {
+  padding: 0 !important;
+  margin: 0;
+  border: none;
+  font-size: 1em;
+  display: inline-block;
+  white-space: pre;
+}
 /********Begin footer styles********/
 #estimateButtonfooter {
   position: relative;
   width: 100%;
+  display: inline-block;
   overflow: hidden;
-  float: left;
-  display: block;
   margin: 20px 0 0 0;
-  padding: 10px 0 5px 0;
+  padding: 10px 0 20px 0;
 }
 #estimateButtonfooter hr {
   display: block;
@@ -425,28 +509,23 @@ aside #Estimate-Form-Section h2 {
   left: 252.855px;
 }
 footer {
-  color: white;
-  bottom: 0;
-  padding: 5px 0 5px 0;
-  margin: 30px 0 0 0;
-  width: 100%;
-  display: inline-block;
-  float: left;
+  float: none;
   background-color: black;
-  min-height: 100%;
+  clear: both;
+  width: 100%;
+  height: auto;
 }
-#footerContainer {
-  display: block;
+footer #footerContainer {
+  background: black;
   color: #888;
   margin-left: auto!important;
   margin-right: auto!important;
   width: 770px;
-  font-size: 1em;
   font-weight: normal;
 }
-#footerContainer #footerBottom {
-  height: 50px;
-  overflow: hidden;
+footer #footerContainer #footerBottom {
+  padding: 0 0 20px 0;
+  display: inline-block;
   width: 100%;
   background-image: url(../images/sdc_logo_COLOR-white.svg);
   background-repeat: no-repeat;
@@ -462,17 +541,18 @@ footer {
 			}*/
 
 }
-#footerContainer #footerBottom #footerLeft {
+footer #footerContainer #footerBottom #footerLeft {
   float: left;
   text-align: left;
   font-family: Arial, sans-serif;
-  font-size: 10px;
+  font-size: .80em;
+  padding: 10px;
 }
-#footerContainer #footerBottom #footerRight {
+footer #footerContainer #footerBottom #footerRight {
   float: right;
   text-align: right;
-  font-size: .75em;
   font-weight: normal;
   font-family: Arial, sans-serif;
-  font-size: 10px;
+  font-size: .80em;
+  padding: 10px;
 }
