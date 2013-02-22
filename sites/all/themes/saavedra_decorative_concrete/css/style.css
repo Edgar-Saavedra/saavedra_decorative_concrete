@@ -1648,3 +1648,26 @@ div.admin-panel .description {
 #footer-wrapper .poll .bar .foreground {
   background-color: #ddd;
 }
+/***custom css***/
+#block-views-gallery-home-block h2{
+  display: none;
+}
+.view-gallery-home .galleria-thumbnails-container{
+  display: none;
+}
+.node-blog .group-right .field-item{
+ overflow:hidden;
+    display: block;   
+    width: 80px;
+    height: 75px;
+    float: left;    
+    margin: 0 5px 10px 0;
+    position: relative;
+    -moz-box-shadow: 0px 0px 7px #888;
+-webkit-box-shadow: 0px 0px 7px #888;
+box-shadow: 0px 0px 7px #888;
+}
+.node-blog .group-right .field-item img{
+ height: 100%;
+ width: 100%;
+}

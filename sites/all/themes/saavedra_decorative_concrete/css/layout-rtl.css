@@ -11,7 +11,7 @@
 .region-footer-secondcolumn,
 .region-footer-thirdcolumn,
 .region-footer-fourthcolumn {
-  float: right;
+  float: left;
 }
 .region-header {
   float: left;
