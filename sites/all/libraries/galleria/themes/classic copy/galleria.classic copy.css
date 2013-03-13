@@ -54,14 +54,15 @@
 }
 .galleria-loader {
     background: #000;
-    width: 20px;
-    height: 20px;
-    position: absolute;
+    width: 200px;
+    height: 200px;
+    position: relative;
     top: 10px;
     right: 10px;
     z-index: 2;
     display: none;
     background: url(classic-loader.gif) no-repeat 2px 2px;
+    border: solid red!important;
 }
 .galleria-info {
     width: 50%;

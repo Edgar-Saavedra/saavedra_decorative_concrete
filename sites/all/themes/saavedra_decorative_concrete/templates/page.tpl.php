@@ -85,10 +85,15 @@
  * @see html.tpl.php
  */
 ?>
-<div id="page-wrapper"><div id="page">
-
+<div id="page-wrapper">
+  <div class='headerLine'></div>
+  <div id="page">
+   
+<div id="container">
+     <div class='headerLine2'></div> 
+     <div class='headerLine3'></div> 
   <div id="header" class="<?php print $secondary_menu ? 'with-secondary-menu': 'without-secondary-menu'; ?>"><div class="section clearfix">
-
+  
     <?php if ($logo): ?>
       <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
         <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
@@ -98,7 +103,7 @@
     <?php if ($site_name || $site_slogan): ?>
       <div id="name-and-slogan"<?php if ($hide_site_name && $hide_site_slogan) { print ' class="element-invisible"'; } ?>>
 
-        <?php if ($site_name): ?>
+       <!-- <?php if ($site_name): ?>
           <?php if ($title): ?>
             <div id="site-name"<?php if ($hide_site_name) { print ' class="element-invisible"'; } ?>>
               <strong>
@@ -110,7 +115,7 @@
               <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
             </h1>
           <?php endif; ?>
-        <?php endif; ?>
+        <?php endif; ?> -->
 
         <?php if ($site_slogan): ?>
           <div id="site-slogan"<?php if ($hide_site_slogan) { print ' class="element-invisible"'; } ?>>
@@ -120,11 +125,12 @@
 
       </div> <!-- /#name-and-slogan -->
     <?php endif; ?>
-
+  <div >
     <?php print render($page['header']); ?>
+  </div>
 
     <?php if ($main_menu): ?>
-      <div id="main-menu" class="navigation">
+      <!--div id="main-menu" class="navigation">
         <?php print theme('links__system_main_menu', array(
           'links' => $main_menu,
           'attributes' => array(
@@ -137,7 +143,7 @@
             'class' => array('element-invisible'),
           ),
         )); ?>
-      </div> <!-- /#main-menu -->
+      </div--> 
     <?php endif; ?>
 
     <?php if ($secondary_menu): ?>
@@ -156,8 +162,9 @@
         )); ?>
       </div> <!-- /#secondary-menu -->
     <?php endif; ?>
-
-  </div></div> <!-- /.section, /#header -->
+    <a href="#"><img src="/<?php print $directory; ?>/images/estimateButton2.png"  alt="Get An Estimate!"></a>
+  </div>
+</div> <!-- /.section, /#header -->
 
   <?php if ($messages): ?>
     <div id="messages"><div class="section clearfix">
@@ -187,12 +194,7 @@
       <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
-      <?php if ($title): ?>
-        <h1 class="title" id="page-title">
-          <?php print $title; ?>
-        </h1>
-      <?php endif; ?>
-      <?php print render($title_suffix); ?>
+     
       <?php if ($tabs): ?>
         <div class="tabs">
           <?php print render($tabs); ?>
@@ -204,6 +206,12 @@
           <?php print render($action_links); ?>
         </ul>
       <?php endif; ?>
+       <?php if ($title): ?>
+        <h1 class="title" id="page-title">
+          <?php print $title; ?>
+        </h1>
+      <?php endif; ?>
+      <?php print render($title_suffix); ?>
       <?php print render($page['content']); ?>
       <?php print $feed_icons; ?>
 
@@ -216,6 +224,14 @@
     <?php endif; ?>
 
   </div></div> <!-- /#main, /#main-wrapper -->
+  <!--estimate button-->
+<div id='estimateButtonfooter'>
+  <div id='footerLine1'></div>
+  <div id='footerLine2'></div>
+  <div id='footerLine3'></div>
+  <a href="#"><img src="/<?php print $directory; ?>/images/estimateButton-01.png"  alt="Get An Estimate!"></a>
+</div>
+  <!--Estimate Button END-->
 
   <?php if ($page['triptych_first'] || $page['triptych_middle'] || $page['triptych_last']): ?>
     <div id="triptych-wrapper"><div id="triptych" class="clearfix">
@@ -224,7 +240,7 @@
       <?php print render($page['triptych_last']); ?>
     </div></div> <!-- /#triptych, /#triptych-wrapper -->
   <?php endif; ?>
-
+</div>
   <div id="footer-wrapper"><div class="section">
 
     <?php if ($page['footer_firstcolumn'] || $page['footer_secondcolumn'] || $page['footer_thirdcolumn'] || $page['footer_fourthcolumn']): ?>

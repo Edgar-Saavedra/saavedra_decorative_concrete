@@ -5,19 +5,20 @@
 .galleria-container {
     position: relative;
     overflow: hidden;
-    background: #000;
+    background: none;
 }
 .galleria-container img {
     -moz-user-select: none;
     -webkit-user-select: none;
     -o-user-select: none;
+
 }
 .galleria-stage {
     position: absolute;
-    top: 10px;
-    bottom: 60px;
-    left: 10px;
-    right: 10px;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
     overflow:hidden;
 }
 .galleria-thumbnails-container {
@@ -55,11 +56,12 @@
     width: 20px;
     height: 20px;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 190px;
+    left: 375px;
     z-index: 2;
     display: none;
     background: url(classic-loader.gif) no-repeat 2px 2px;
+    
 }
 .galleria-info {
     width: 50%;

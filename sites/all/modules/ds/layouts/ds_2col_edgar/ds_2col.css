@@ -1,0 +1,14 @@
+/**
+ * @file
+ * Styling for the ds_2col_edgar template.
+ */
+
+.ds-2col > .group-left {
+  float: left; /* LTR */
+  width: 25%;
+}
+
+.ds-2col > .group-right {
+  float: left; /* LTR */
+  width: 35%;
+}

@@ -12,8 +12,8 @@
 /*global jQuery, Galleria */
 
 Galleria.addTheme({
-    name: 'classic',
-    author: 'Galleria',
+    name: 'edgar',
+    author: 'edgar',
     css: 'galleria.classic.css',
     defaults: {
         transition: 'slide',

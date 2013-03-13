@@ -22,6 +22,7 @@ function template_preprocess_galleria_container(&$vars) {
   if (empty($optionset)) {
     // Fall back to 'default' option set
     $optionset = galleria_optionset_load('default');
+    $optionset = galleria_optionset_load('home_gallery');
   }
 
   // Attach Galleria JavaScript

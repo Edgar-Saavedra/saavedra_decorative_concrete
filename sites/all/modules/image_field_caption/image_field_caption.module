@@ -1,0 +1,195 @@
+<?php
+
+/**
+ * @file
+ * Provides a caption textarea for image fields.
+ */
+
+/**
+ * Implements hook_form_alter().
+ */
+function image_field_caption_form_alter(&$form, &$form_state, $form_id) {
+  // On node forms, for each image field, attach an after build handler for
+  // the image field element and the attach a submit handler to the form.
+  if (isset($form['#node_edit_form']) && $form['#node_edit_form']) {
+    $image_fields = image_field_caption_get_image_fields('node', $form['type']['#value']);
+    if ($image_fields) {
+      foreach ($image_fields as $field_name => $field) {
+        $form[$field_name]['#after_build'][] = 'image_field_caption_form_element_after_build';
+      }
+      $form['#submit'][] = 'image_field_caption_form_submit_handler';
+    }
+  }
+}
+
+/**
+ * An #after_build callback for image fields. Attaches the caption textarea to
+ * the image field form element.
+ */
+function image_field_caption_form_element_after_build($element, &$form_state) {
+  $delta = 0;
+  while (isset($element['und'][$delta])) {
+    $field_name = $element['und']['#field_name'];
+    if ($form_state['values'][$field_name]['und'][$delta]['fid'] != 0) {
+      $default_value = '';
+      if (isset($element['und'][$delta]['#entity']->$field_name)) {
+        $field = $element['und'][$delta]['#entity']->$field_name;
+        if (isset($field['und'][$delta]['caption'])) {
+          $default_value = $field['und'][$delta]['caption'];
+        }
+      }
+      $element['und'][$delta]['caption'] = array(
+        '#type' => 'textarea',
+        '#title' => t('Caption'),
+        '#description' => t('Enter any caption text for this image.'),
+        '#value' => $default_value, /* http://drupal.org/node/1189584 */
+        '#attributes' => array(
+          'id' => "{$element['#id']}-und-$delta-caption",
+          'name' => "{$element['#array_parents'][0]}[und][$delta][caption]",
+        ),
+      );
+    }
+    $delta++;
+  }
+  return $element;
+}
+
+/**
+ * A #submit callback for node forms with image fields.
+ */
+function image_field_caption_form_submit_handler($form, &$form_state) {
+  // For each image field, iterate over each delta in the form state values
+  // for the image field. We only care about deltas that have a file id. If
+  // we have a caption, save the results in the database, otherwise delete
+  // any old records.
+  $image_fields = image_field_caption_get_image_fields('node', $form['type']['#value']);
+  if ($image_fields) {
+    foreach ($image_fields as $field_name => $field) {
+      $delta = 0;
+      while (isset($form_state['values'][$field_name]['und'][$delta]['fid'])) {
+        $fid = $form_state['values'][$field_name]['und'][$delta]['fid'];
+        if ($fid != 0 && isset($form_state['values'][$field_name]['und'][$delta]['caption'])) {
+          $caption = $form_state['values'][$field_name]['und'][$delta]['caption'];
+          if ($caption != '') {
+            $result = db_select('image_field_caption', 'ifc')
+              ->fields('ifc', array('fid'))
+              ->condition('fid', $fid)
+              ->execute()
+              ->fetch();
+            if (isset($result->fid)) {
+              $result = db_update('image_field_caption')
+                ->fields(array('caption' => $caption))
+                ->condition('fid', $fid)
+                ->execute();
+            }
+            else {
+              $result = db_insert('image_field_caption')
+                ->fields(array('fid' => $fid, 'caption' => $caption))
+                ->execute();
+            }
+          }
+          else {
+            if ($form_state['values']['nid']) {
+              db_delete('image_field_caption')
+                ->condition('fid', $fid)
+                ->execute();
+            }
+          }
+        }
+        $delta++;
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_file_load().
+ */
+function image_field_caption_file_load($files) {
+  // Add caption data into the file object.
+  $result = db_query(
+    'SELECT fid, caption FROM {image_field_caption} WHERE fid IN (:fids)',
+    array(':fids' => array_keys($files))
+  )->fetchAll(PDO::FETCH_ASSOC);
+  foreach ($result as $record) {
+    foreach ($record as $key => $value) {
+      $files[$record['fid']]->$key = $value;
+    }
+  }
+}
+
+/**
+ * Implements hook_file_delete().
+ */
+function image_field_caption_file_delete($file) {
+  db_delete('image_field_caption')
+    ->condition('fid', $file->fid)
+    ->execute();
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function image_field_caption_theme_registry_alter(&$theme_registry) {
+  // Override the image_formatter function and add caption as a variable to be
+  // assembled by theme().
+  $theme_registry['image_formatter']['theme path'] = drupal_get_path('module', 'image_field_caption');
+  $theme_registry['image_formatter']['function'] = 'image_field_caption_image_formatter';
+  $theme_registry['image_formatter']['variables']['caption'] = NULL;
+}
+
+/**
+ * Override of theme_image_formatter().
+ */
+function image_field_caption_image_formatter($variables) {
+  $image = theme_image_formatter($variables);
+  // Now that Drupal has rendered the image, if there was a caption let's
+  // render the image and the caption, otherwise just return the already
+  // rendered image.
+  if (isset($variables['item']['caption'])) {
+    return theme('image_field_caption', array(
+      'image' => $image,
+      'caption' => filter_xss($variables['item']['caption']),
+    ));
+  }
+  else {
+    return $image;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function image_field_caption_theme($existing, $type, $theme, $path) {
+  return array(
+    'image_field_caption' => array(
+      'template' => 'image_field_caption',
+      'variables' => array('image' => NULL, 'caption' => NULL),
+    ),
+  );
+}
+
+/**
+ * Given an entity type and bundle name, this will return an associative array
+ * of image field info instances, keyed by image field machine names. Returns
+ * null if no image fields are found.
+ */
+function image_field_caption_get_image_fields($entity_type, $bundle) {
+  $image_fields = array();
+  $fields = field_info_instances($entity_type, $bundle);
+  foreach ($fields as $field_name => $field) {
+    // Skip any deleted and non image widget fields.
+    if ($field['deleted'] == 1) {
+      continue;
+    }
+    if ($field['widget']['type'] != 'image_image') {
+      continue;
+    }
+    $image_fields[$field_name] = $field;
+  }
+  if (empty($image_fields)) {
+    return NULL;
+  }
+  return $image_fields;
+}
+

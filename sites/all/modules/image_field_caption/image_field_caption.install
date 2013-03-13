@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function image_field_caption_schema() {
+  $schema['image_field_caption'] = array(
+    'description' => 'The base table for the image_field_caption module.', 
+    'fields' => array(
+      'fid' => array(
+        'description' => 'The file id.', 
+        'type' => 'int', 
+        'unsigned' => TRUE, 
+        'not null' => TRUE,
+      ),
+      'caption' => array(
+        'description' => 'The caption text.', 
+        'type' => 'text',
+        'not null' => TRUE,
+      ),
+    ),
+    'unique keys' => array(
+      'fid' => array('fid'),
+    ),
+  );
+  return $schema;
+}
+

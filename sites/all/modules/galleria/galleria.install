@@ -151,7 +151,7 @@ function galleria_update_7001() {
       'type' => 'varchar',
       'length' => 255,
       'not null' => TRUE,
-      'default' => 'classic',
+      //'default' => 'classic',
     ),
     'imagestyle_thumb' => array(
       'description' => 'The image style for thumbnails.',

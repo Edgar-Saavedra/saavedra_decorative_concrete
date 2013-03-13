@@ -10,6 +10,9 @@ stylesheets[all][] = css/style.css
 stylesheets[all][] = css/colors.css
 stylesheets[print][] = css/print.css
 
+scripts[] = js/jquery-1.9.1.min.js
+scripts[] =js/script.js
+
 regions[header] = Header
 regions[help] = Help
 regions[page_top] = Page top
