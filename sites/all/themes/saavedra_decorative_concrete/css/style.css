@@ -377,17 +377,9 @@ h1#site-name {
   margin: 0;
   padding: 0; 
 }
-.region-header .block .content a{
-  color:#C88A63;
-  background-color: #fff;
-  border-radius: 10px 5px;
-  text-decoration: none;
-}
 .region-header .block .content a:hover{
   color:#C88A63;
   background-color: #fff;
-
-  box-shadow: 0 0 7px #A88273;
   border-radius: 10px 5px;
 }
 .region-header .block .content a.active {
@@ -404,6 +396,7 @@ h1#site-name {
   list-style: none;
   list-style-image: none;
   padding: 0;
+  float: left;
 }
 .region-header .block li.expanded ul li {
   list-style: none;
@@ -442,7 +435,9 @@ h1#site-name {
   border-bottom: 1px solid;
   border-bottom-color: #eee;
   border-bottom-color: rgba(255, 255, 255, 0.2);
+  padding: 3px 7px ;
   color: #683c03;
+  margin: 0 7px 0 0; 
 }
 .region-header .block-menu li a:hover,
 .region-header .block-menu li a:focus,
@@ -570,6 +565,14 @@ h1#site-name {
   margin: 0 1px;
 }
 #main-menu-links a {
+  color: #333;
+  background: #ccc;
+  background: rgba(255, 255, 255, 0.7);
+  float: left; /* LTR */
+  height: 2.4em;
+  line-height: 2.4em;
+  padding: 0 0.8em;
+  text-decoration: none;
   text-shadow: 0 1px #eee;
   -khtml-border-radius-topleft: 8px;
   -khtml-border-radius-topright: 8px;
@@ -1742,7 +1745,7 @@ div.admin-panel .description {
 }
 .view-gallery-home .galleria-thumbnails-container{
 }
-.node-type-news-entry .group-right .field-item{
+.node-blog .group-right .field-item{
  overflow:hidden;
     display: block;   
     width: 80px;
@@ -1754,7 +1757,7 @@ div.admin-panel .description {
 -webkit-box-shadow: 0px 0px 7px #888;
 box-shadow: 0px 0px 7px #888;
 }
-.node-type-news-entry .group-right .field-item img{
+.node-blog .group-right .field-item img{
  height: 100%;
  width: 100%;
 }
@@ -1794,15 +1797,15 @@ a[title^='Read admin\'s latest blog entries']{
   width: 100%;
   margin: 0 ;
 }
-.view-taxonomy-term .views-row{
+#block-views-business-gallery-block .views-row{
 width: 180px;
-height: auto;
+height: 360px;
 display: inline-block;
 overflow: hidden;
 float: left;
 margin: 0 6.25px 0 6.25px;
 }
-.view-taxonomy-term .views-row img{
+#block-views-business-gallery-block .views-row img{
 width: 100%;
 height: auto;
 }
@@ -2182,15 +2185,4 @@ border: none;
 }
 .node-blog .group-right .field-item:hover{
   box-shadow: 0 0 7px #542311;
-}
-.page-taxonomy-term-5 ul li ul {
-  visibility: visible!important;
-  display: block!important;
-}
-.page-taxonomy-term-6 ul li ul {
-  visibility: visible!important;
-  display: block!important;
-}
-.feed-icon img{
-  display: none;
 }

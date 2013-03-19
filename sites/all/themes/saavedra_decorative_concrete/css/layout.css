@@ -27,8 +27,6 @@ body,
 }
 .region-header {
   float: right; /* LTR */
-  border-bottom: solid;
-  height: 75px
 }
 .with-secondary-menu .region-header {
 }
