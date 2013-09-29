@@ -26,7 +26,6 @@ body,
   position: relative;
 }
 .region-header {
-  float: right; /* LTR */
 }
 .with-secondary-menu .region-header {
 }
@@ -54,7 +53,7 @@ body,
 }
 .one-sidebar #content {
   width: 591px;
-  border-left: dotted 1px #BA9052;
+  /*border-left: dotted 1px #BA9052;*/
   padding: 0 0 0 10px;
 }
 .two-sidebars #content {
@@ -81,13 +80,14 @@ body,
   float: right;
   right: 5px;
 }
-#sidebar-second .block{
+#sidebar-second #block-block-1{
   height: 143px;
   overflow: hidden;
-   background-color: #FCFBFA;
-   box-shadow: 0 0 5px #BA9052;
+   border-radius: 0 0;
+   /*box-shadow: 0 0 5px #BA9052;*/
   margin: 0;  
   padding: 0px auto 0 auto;
+  border-bottom: 4px solid #fde997;
 }
 #sidebar-second .block+.block{
   margin: 10px 0 0 0 ;
@@ -95,8 +95,7 @@ body,
 }
 #sidebar-second .block h3{
   color: #683C03;
-  margin: 25% 0 0 0;
-  font-weight: bold;
+  margin: 10px 0 0 0;
   font-size: 2em;
 }
 
@@ -115,8 +114,7 @@ body,
 .region-triptych-first,
 .region-triptych-middle,
 .region-triptych-last {
-  margin: 20px 20px 30px;
-  width: 280px;
+  width: 33%;
 }
 #footer-wrapper {
   padding: 35px 5px 30px;

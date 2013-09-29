@@ -1,16 +1,42 @@
 
+@font-face {
+    font-family: 'BebasRegular';
+    src: url('../fonts/BEBAS___-webfont.eot');
+    src: url('../fonts/BEBAS___-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/BEBAS___-webfont.woff') format('woff'),
+         url('../fonts/BEBAS___-webfont.ttf') format('truetype'),
+         url('../fonts/BEBAS___-webfont.svg#BebasRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'VarelaRoundRegular';
+    src: url('../fonts/VarelaRound-Regular-webfont.eot');
+    src: url('../fonts/VarelaRound-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/VarelaRound-Regular-webfont.woff') format('woff'),
+         url('../fonts/VarelaRound-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/VarelaRound-Regular-webfont.svg#VarelaRoundRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+
 /* ---------- Overall Specifications ---------- */
 
 body {
-  line-height: 1.5;
-  font-size: 0.7em;
+  line-height: 120%;
+  font-size: .90em;
+  font-weight: 400;
   word-wrap: break-word;
   margin: 0;
   padding: 0;
   border: 0;
   outline: 0;
-  font-family: Helvetica, Arial, sans-serif;
-  color: #aa6500
+  font-family: 'Open Sans', sans-serif;
+  color: #aa6500;
+  background-color: #cc6f00;
 }
 a:link,
 a:visited {
@@ -28,14 +54,15 @@ h4,
 h5,
 h6 {
   margin: 0 0 0 0;
-  font-weight: inherit;
+  font-weight: 400;
 }
 h1 {
-  font-size: 1.357em;
+  font-size: 2em;
   color: #683c03;
+  font-weight: 500;
 }
 h2 {
-  font-size: 1.143em;
+  font-size: 1.9em;
 }
 p {
   margin: 0 0 1.2em;
@@ -56,7 +83,7 @@ samp,
 var {
   padding: 0 0.4em;
   font-size: 0.77em;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 code {
   background-color: #f2f2f2;
@@ -108,7 +135,8 @@ body,
 #site-slogan,
 .ui-widget,
 .comment-form label {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
+
 }
 #header,
 #footer-wrapper,
@@ -123,13 +151,13 @@ div.meta,
 p.comment-time,
 table,
 .breadcrumb {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family:  'Open Sans', sans-serif;
 }
 input,
 textarea,
 select,
 a.button {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 
@@ -206,8 +234,6 @@ tr th {
 }
 #footer-wrapper tr td,
 #footer-wrapper tr th {
-  border-color: #555;
-  border-color: rgba(255, 255, 255, 0.18);
 }
 tr.odd {
   background: #e4e4e4;
@@ -244,7 +270,7 @@ ul.contextual-links {
   text-shadow: 0 0 0 !important;
 }
 .item-list .pager {
-  font-size: 1.45em;
+  font-size: 1.2em;
 }
 ul.menu li {
   margin: 0;
@@ -304,8 +330,9 @@ ul.tips {
 }
 #logo img{
   float: left;
-  height: 100px;
+  height: 110px;
   width: auto;
+  margin: 10px auto;
 }
 #name-and-slogan {
   float: left; /* LTR */
@@ -333,33 +360,37 @@ h1#site-name {
   position: absolute;
   width: 100%;
   display: block;
-  border-bottom: dotted #fff1dc 1px ;
-   background-color: #fff;
-  background-image: -moz-linear-gradient(top, #fff1dc 10%, #fff 100%);
+  border-bottom: solid #ed9e37 4px ;
+   background-color: #FCEEB4;
+   background-image: -moz-linear-gradient(50% 1%, #FCEEB4, white);
+   background-image: -webkit-gradient(linear, 50% 1%, 50% 0%, from(#FCEEB4), to(white));
+  /*background-image: -moz-linear-gradient(top, #fff1dc 10%, #fff 100%);
   background-image: -ms-linear-gradient(top, #fff1dc 10%, #fff 100%);
   background-image: -o-linear-gradient(top, #fff1dc 10%, #fff 100%);
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #fff1dc), color-stop(1, #fff));
   background-image: -webkit-linear-gradient(top, #fff1dc 10%, #fff 100%);
-  background-image: linear-gradient(top, #fff1dc 10%, #fff 100%);
+  background-image: linear-gradient(top, #fff1dc 10%, #fff 100%);*/
 }
 .headerLine2 {
   position: absolute;
   width: 770px;
   display: inline-block;
-  border-bottom: dotted #fff1dc 1px ;
-   background-color: #fff;
-  background-image: -moz-linear-gradient(top, #fff1dc 10%, #fff 100%);
+  border-bottom: solid #ed9e37 4px ;
+   background-color: #FCEEB4;
+   background-image: -moz-linear-gradient(50% 1%, #FCEEB4, white);
+   background-image: -webkit-gradient(linear, 50% 1%, 50% 0%, from(#FCEEB4), to(white));
+  /*background-image: -moz-linear-gradient(top, #fff1dc 10%, #fff 100%);
   background-image: -ms-linear-gradient(top, #fff1dc 10%, #fff 100%);
   background-image: -o-linear-gradient(top, #fff1dc 10%, #fff 100%);
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #fff1dc), color-stop(1, #fff));
   background-image: -webkit-linear-gradient(top, #fff1dc 10%, #fff 100%);
-  background-image: linear-gradient(top, #fff1dc 10%, #fff 100%);
+  background-image: linear-gradient(top, #fff1dc 10%, #fff 100%);*/
 }
 .headerLine3 {
   position: absolute;
   width: 770px;
   display: inline-block;
-  background-image: url(../images/headerBg-01.png);
+  /*background-image: url(../images/headerBg-01.png);*/
   background-repeat: no-repeat;
   background-size:84% 100%;
   background-position: right;  
@@ -371,7 +402,6 @@ h1#site-name {
   display: inline-block;
   width: 770px !important;
   height: auto;
-  margin: 10px 0 0 0!important;
 }
 .region-header .block .content {
   margin: 0;
@@ -380,13 +410,16 @@ h1#site-name {
 .region-header .block .content a:hover{
   color:#C88A63;
   background-color: #fff;
-  border-radius: 10px 5px;
+  /*border-radius: 10px 5px;*/
 }
 .region-header .block .content a.active {
   color: #C88A63;
    background-color: #fff;
-  border-radius: 10px 5px;
-  box-shadow: 0 0 7px #A88273;
+   font-weight: 600;
+  /*border-radius: 10px 5px;
+  box-shadow: 0 0 7px #A88273;*/
+  display: block!important;
+  visibility: visible!important;
 }
 .region-header .block ul {
   margin: 0;
@@ -624,10 +657,17 @@ h1#site-name {
   margin-top:10px;
   font-weight: normal;
   line-height: 1.4;
-  background: #ddd;
   text-shadow: 1px 1px #fff;
-  border-bottom: solid 1px #BA9052; 
+  /*border-bottom: solid 1px #BA9052; */
   padding-bottom: 10px;
+}
+#featured #block-views-home-gallery-block{
+height: 375px;
+width: 100%;
+/*-moz-box-shadow: 0px 0px 20px #888;
+-webkit-box-shadow: 0px 0px 20px #888;
+box-shadow: 0px 0px 20px #888;*/
+overflow: hidden;
 }
 #featured h2 {
   font-size: 1.174em;
@@ -657,9 +697,26 @@ h1#site-name {
 
 .content {
 }
-h1#page-title {
+#page-title {
   font-size: 2em;
   line-height: 1;
+  padding: 10px 5px;
+  margin-bottom:10px;
+  background: #ffcc00;
+  font-weight: 600;
+  color: white;
+}
+/*.node-type-project #page-title{
+  background-color: #000;
+}*/
+/*.page-node-46 #page-title{
+  background-color: #e74c3c;
+}*/
+/*.page-projects-business #page-title, .page-projects-residential #page-title{
+  background-color: #e67e22;
+}*/
+.node-type-news #page-title{
+  background-color: #9b59b6;
 }
 #content h2 {
   margin-bottom: 2px;
@@ -854,6 +911,7 @@ ul.links {
 .sidebar .block .content {
   font-size: 0.914em;
   line-height: 1.4;
+  color: #666;
 }
 .sidebar tbody {
   border: none;
@@ -867,9 +925,11 @@ ul.links {
 /* ----------------- Triptych ----------------- */
 
 #triptych-wrapper {
-  background-color: #f0f0f0;
-  background: rgba(30, 50, 10, 0.08);
-  border-top: 1px solid #e7e7e7;
+  background: #cc6f00;
+  bottom: 0;
+  padding-top: 10px;
+  color: #fff;
+  margin-top:40px;
 }
 #triptych h2 {
   color: #683C03;
@@ -880,10 +940,10 @@ ul.links {
   line-height: 1;
 }
 #triptych .block {
-  margin-bottom: 2em;
+  /*margin-bottom: 2em;
   padding-bottom: 2em;
   border-bottom: 1px solid #dfdfdf;
-  line-height: 1.3;
+  line-height: 1.3;*/
 }
 #triptych .block.last {
   border-bottom: none;
@@ -923,24 +983,19 @@ ul.links {
 /* ------------------ Footer ------------------ */
 
 #footer-wrapper {
-  color: #c0c0c0;
-  color: rgba(255, 255, 255, 0.65);
-  font-size: 0.857em;
+  color: #666;
+  width: 100%
 }
 #footer-wrapper a {
-  color: #fcfcfc;
-  color: rgba(255, 255, 255, 0.8);
-}
+  color: #666;
+ }
 #footer-wrapper a:hover,
 #footer-wrapper a:focus {
-  color: #fefefe;
-  color: rgba(255, 255, 255, 0.95);
-  text-decoration: underline;
+  color: #666;
+   text-decoration: underline;
 }
 #footer-wrapper .block {
   margin: 20px 0;
-  border: 1px solid #444;
-  border-color: rgba(255, 255, 255, 0.1);
   padding: 10px;
 }
 #footer-columns .block-menu,
@@ -1002,6 +1057,7 @@ ul.links {
   margin-top: 30px;
   border-top: 1px solid #555;
   border-color: rgba(255, 255, 255, 0.15);
+
 }
 #footer .region {
   margin-top: 20px;
@@ -1040,7 +1096,7 @@ ul.links {
 /* --------------- System Tabs  --------------- */
 
 .tabs {
-  font-family: Helvetica, Arial, sans-serif;}
+  font-family: 'Open Sans', sans-serif;}
 .tabs ul.primary {
   padding: 0 3px;
   margin: 0;
@@ -1261,7 +1317,14 @@ fieldset legend {
   display: block;
   height: 2em;
   left: -1px; /* LTR */
-  font-family: Helvetica, Arial, sans-serif;
+
+
+
+
+
+
+
+  font-family: 'Open Sans', sans-serif;
   line-height: 2;
   padding: 0;
   position: absolute;
@@ -1761,12 +1824,12 @@ box-shadow: 0px 0px 7px #888;
  height: 100%;
  width: 100%;
 }
-/********custom css**********/
-.content .field-name-title{
-  }
-a[title^='Read admin\'s latest blog entries']{
-  display: none;
-}
+/*---------------------------------------------------------
+-----------------------------------------------------------
+******************** CUSTOM CSS ***************************
+-----------------------------------------------------------
+-----------------------------------------------------------*/
+
 .pager{
   text-align: left;
   width: 100%!important;
@@ -1778,372 +1841,69 @@ a[title^='Read admin\'s latest blog entries']{
    display: inline-block;
    float: left;
 }
-.view-id-project_residential_gallery .item-list .pager {/*
-    font-size: 0.929em;
-    left: 0px;
-    position: absolute;
-    top: 10px;*/
-}
 #search-block-form{
   display: inline-block;
   right: 0;}
 
-
-
-/**Business Projects View**/
-.region #block-views-business-gallery-block{
-  overflow: hidden;
-  display: block;
-  width: 100%;
-  margin: 0 ;
-}
-#block-views-business-gallery-block .views-row{
-width: 180px;
-height: 360px;
-display: inline-block;
-overflow: hidden;
-float: left;
-margin: 0 6.25px 0 6.25px;
-}
-#block-views-business-gallery-block .views-row img{
-width: 100%;
-height: auto;
-}
-.business_gallery_view_wrapper {
-  border: solid;
-}
-.view-business-gallery .views-field-title{
-margin: 5px 0 0 0 ;
-}
-.view-business-gallery .views-field-field-business-node-gallery{
-  height: 155px;
-  overflow: hidden;
-}
-.node-type-pojects-businesses  h1{
-
-   background-color: #FFFEFD;
- border: solid #F9EDD7 1px;
- border-radius: 10px 5px; 
- padding:5px;
-  width: auto;
-}
-/**Business Projects View End**/
-/**Residentail Projects View **/
-.view-project-residential-gallery{
-  overflow: hidden;
-  display: block;
-  width: 100%;
-  margin: 0 ;
-}
-.view-project-residential-gallery .views-row{
-width: 180px;
-height: 360px;
-display: inline-block;
-overflow: hidden;
-float: left;
-margin: 0 6.25px 0 6.25px;
-}
-.view-project-residential-gallery .views-field-field-residential-node-gallery{
-  width: 100%;
-height: 155px;
-  overflow: hidden;
-}
-.view-project-residential-gallery .views-field-field-residential-node-gallery img{
-width: 100%;
-height: auto;
-display: inline-block;
-float: left;
-clear: both;
-}
-.views-field-field-residential-summery {
-  overflow: hidden;
-  float: left; 
-}
-.view-project-residential-gallery .views-field-view-node{
+/*---------------------------------------------------------
+******************** HEADER 
+-----------------------------------------------------------*/
+.region-header{
   display: inline-block;
-  float: left;  
-
-}
-.view-residential-gallery .views-field-title{
-margin: 5px 0 0 0 ;
-}
-.node-type-residential-pojects-page  h1{
-
-   background-color: #FFFEFD;
- border: solid #F9EDD7 1px;
- border-radius: 10px 5px; 
- padding:5px;
-  width: auto;
-}
-/**Residentail Projects View End**/
-
-/****Most Recen Projects*****/
-#block-views-d7bb1dedac24d4e1078e9f9cd6934d7b{
-  width: 370px;
-  display: inline-block;
-  float: left;
-  margin: 0 20px 0 0;
-  border-right: solid 1px #BA9052;
-}
-#block-views-27976c650f55958d38593692b70a0bf2{
-
-  width: 375px;
-}
-
-/*** Most Recen Projects END****/
-
-/**most recent business projects gallery***/
-#block-views-d7bb1dedac24d4e1078e9f9cd6934d7b{
- height: 430px;
- overflow: hidden;
-}
-
-#block-views-d7bb1dedac24d4e1078e9f9cd6934d7b .view-id-most_recent_projects_business{
-  overflow: hidden;
-}
-#block-views-d7bb1dedac24d4e1078e9f9cd6934d7b .view-id-most_recent_projects_business .views-field-field-business-node-gallery{
-width: 50%;
-overflow: hidden;
-float: left;
-}
-#block-views-d7bb1dedac24d4e1078e9f9cd6934d7b .view-id-most_recent_projects_business .views-field-field-business-node-gallery img{
-width: 100%;
-height: 100%;
-overflow: hidden;
-float: left;
-}
-#block-views-d7bb1dedac24d4e1078e9f9cd6934d7b .view-id-most_recent_projects_business .views-field-field-business-summary p{
-width: 40%;
-height: 120px;
-margin: 0 0 0 10px;
-overflow: hidden;
-float: left;
-}
-
-#block-views-d7bb1dedac24d4e1078e9f9cd6934d7b .view-id-most_recent_projects_business .views-row {
-height: 160px;
-width: auto;
-margin: 0 0 10px 0;
-float: left;
-display: inline-block;
-overflow: hidden;}
-
-#block-views-d7bb1dedac24d4e1078e9f9cd6934d7b .views-field-view-node{ 
-  float: left;
-  margin: 0 0 0 10px;
-  overflow: hidden;
-}
-
-/**most recent business projects gallery end***/
-/**most recent residential projects gallery***/
-#block-views-27976c650f55958d38593692b70a0bf2{
- height: 430px;
- overflow: hidden;
- 
-}
-.view-id-most_recent_projects_residential .views-row {
-  overflow: hidden;
-  margin: 0 0 10px 0;
-}
-
-#block-views-27976c650f55958d38593692b70a0bf2 .view-most-recent-projects-residential{
-  overflow: hidden;
-}
-#block-views-27976c650f55958d38593692b70a0bf2 .view-most-recent-projects-residential .views-field-field-residential-node-gallery{
-width: 50%;
-float: left;
-display: inline-block;
-overflow: hidden;
-}
-#block-views-27976c650f55958d38593692b70a0bf2 .view-most-recent-projects-residential .views-field-field-residential-node-gallery img{
-height: auto;
-width: 100%;
-float: left;
-display: inline-block;
-overflow: hidden;
-}
-#block-views-27976c650f55958d38593692b70a0bf2 .view-most-recent-projects-residential .views-field-field-residential-summery {
-float: left;
-width: 40%;
-height: 120px;
-margin: 0 0 0 10px;
-overflow: hidden;
-}
-#block-views-27976c650f55958d38593692b70a0bf2 .view-most-recent-projects-residential .views-field-field-residential-summery p{
-  width: 100%;
-}
- .view-most-recent-projects-residential .views-field-view-node{
-  margin: 0 0 0 10px;
-  float: left;
- }
-
-.view-most-recent-projects-residential .views-field-title{ 
-  float: left;
-  width: 100%;
-}
-/**most recent residential projects gallery end***/
-
-
-
-#block-views-d7bb1dedac24d4e1078e9f9cd6934d7b h2{
- background-color: #FFFEFD;
- border: solid #F9EDD7 1px;
- border-radius: 10px 5px; 
- padding-left: 5px;
-  width: 95%;
-}
-.view-most-recent-projects-business .pager{
-color:#900; 
-margin: -5px 0 0 0;
-padding: 0 !important;
-width: 120px!important;
-float: right;
-}
-.view-most-recent-projects-business .pager .pager-current {
-padding: 0;
-margin: 0 auto!important;
-}
-.view-most-recent-projects-business .pager .pager-previous {
-padding: 0 0 0 0;
-margin: 0 10px 0 0px;
-}
-.view-most-recent-projects-business .pager .pager-previous a{
-font-size: 3em;
-margin: 0;
-line-height: 25%;
-padding: 0!important
-}
-.view-most-recent-projects-business .pager .pager-next {
-padding: 0 0 0 0;
-margin: 0 0 0 10px;
-display: inline-block;
-}
-.view-most-recent-projects-business .pager .pager-next a{
-font-size: 3em;
-margin: 0;
-line-height: 25%;
-padding: 0!important
-}
-.view-most-recent-projects-business .pager .pager-previous a:hover{
-text-decoration: none;
-}
-.view-most-recent-projects-business .pager .pager-next a:hover{
-text-decoration: none;
-}
-
-#block-views-27976c650f55958d38593692b70a0bf2 h2{
- background-color: #FFFEFD;
- border: solid #F9EDD7 1px;
- border-radius: 10px 5px; 
- padding-left: 5px;
-  width: 95%;
-}
-
-.view-most-recent-projects-residential .pager{
-color:#900;  
-margin: -5px 0 0 0;
-padding: 0 !important;
-width: 120px!important;
-float: right;
-}
-.view-most-recent-projects-residential .pager .pager-current {
-padding: 0;
-margin: 0 auto!important;
-}
-.view-most-recent-projects-residential .pager .pager-previous {
-padding: 0 0 0 0;
-margin: 0 10px 0 0px;
-}
-.view-most-recent-projects-residential .pager .pager-previous a{
-font-size: 3em;
-margin: 0;
-line-height: 25%;
-padding: 0!important
-}
-.view-most-recent-projects-residential .pager .pager-next {
-padding: 0 0 0 0;
-margin: 0 0 0 10px;
-display: inline-block;
-}
-.view-most-recent-projects-residential .pager .pager-next a{
-font-size: 3em;
-margin: 0;
-line-height: 25%;
-padding: 0!important
-}
-.view-most-recent-projects-residential .pager .pager-previous a:hover{
-text-decoration: none;
-}
-.view-most-recent-projects-residential .pager .pager-next a:hover{
-text-decoration: none;
-}
-.page-node-23 .view-project-residential-gallery{
-  border: none;
-  border-top: 1px solid #FFF1DC;
-  border-radius: 10px 5px;
-  padding: 10px 0  10px 0;
-  margin:  10px 0 10px 0;
-}
-.page-node-21 #block-views-business-gallery-block{
-  border: none;
-  border-top: 1px solid #FFF1DC;
-  border-radius: 10px 5px;
-  padding: 10px 0  10px 0;
-  margin:  10px 0 10px 0;
-}
-
-#block-views-decorative-news-block .pager {
-  padding: 0!important;
-  width: 100%;
-  font-size: 1.75em;
-}
-.node-blog .group-right{
-  margin: -23px 0 0 0!important;
-}
-#block-views-decorative-news-block .pager .last {
-margin: 0;
-padding:0;
-font-size: 1.75em;
-line-height: 100%;
-}
-#block-views-decorative-news-block .pager .first {
-margin: 0;
-padding: 0;
-font-size: 1.75em;
-line-height: 100%;
-}
-.node-blog .field-label{
-  margin: 0px 0 10px 0;
+  margin: 10px 0 0 0;
   padding: 0;
-  color: #683C03;
 }
-.page-node-12 #main{
-    margin: 8px 0 0 0 ;
-  padding: 10px 0 0 0;
-  border-top: solid 1px #BA9052;
+#block-nice-menus-1{
+  border-bottom: solid 2px;
+  margin: 0;
+  padding: 0;
+  height: 75px;
+  background-color:none!important;
 }
-.page-node-12  #content{
-  float: left;
-  margin: 10px 0 0 0 ;
+ul.nice-menu li{
+  background-color: #fff!important;
+  border:none;
+  margin: 0 5px 0 0;
 }
-.page-node-12  #sidebar-first{
-margin: 10px 0 0 0 ; 
+ul.nice-menu ul{
+  top:25px;
+  border: none;
+  width: 250px;
+  overflow:hidden;
+  display: block;
 }
-.page-node-12 .region-sidebar-second{
-margin: 10px 0 0 0;
+ul.nice-menu ul li{
+  display: inline-block;
+  border: none;
+  width: auto;
+  clear: none;
+  margin: 10px 5px 0 0;
 }
-.page-node-12 #block-views-gallery-home-block{
-  height: 400px;
-  background-color: #111;
-  overflow: hidden;
-  box-shadow: 0px 0px 30px #333;
+#block-nice-menus-1 h2{
+  display: none;
 }
+ul.nice-menu a{
+  color: #754220
+}
+ul.nice-menu a:hover{
+  color: #754220;
+   background-color: #fff;
+  /*border-radius: 10px 5px;
+  box-shadow: 0 0 7px #A88273;*/
+  display: block!important;
+  visibility: visible!important;
+  text-decoration:none;
+}
+
+/*---------------------------------------------------------
+******************** Footer
+-----------------------------------------------------------*/
 #estimateButtonfooter {
   position: relative;
   width: 100%;
   display: inline-block;
-  overflow: hidden;
   margin: 20px 0 20px 0;
+  text-align: center;
   padding: 10px 0 10px 0;
 } 
 #footerLine1{
@@ -2163,17 +1923,54 @@ margin: 10px 0 0 0;
   border-bottom: solid 1px #BA9052;
   margin:7px 0 0 0;
 }
-#estimateButtonfooter img{
-  position: absolute;
-  top: 5px;
-  left: 250px;
-width: 264.29px;
+/*---------------------------------------------------------
+******************** Estimate Button
+-----------------------------------------------------------*/
+#estimateButtonfooter a{
+  top:0;
+  margin: 0 auto;
 border: none;
+text-align: center;
 }
 #header img[alt^='Get An Estimate!']{
   position: absolute;
-  top: 80px; 
-  right: -30px;
+  top: 115px; 
+  right: 30px;
+}
+.btn{
+  position: relative;
+  position: absolute;
+  right: 0;
+  top:150px;
+  background: #cc6f00;
+  color: #fff;
+  display: inline-block;
+  width: auto;
+  font-size: 1.25em;
+  padding: 15px 15px;
+  border-radius: 15px 15px;
+  font-weight:600;
+}
+.btn:hover{
+  background: #ed9e37;
+ box-shadow: none;
+}
+a.btnFooter{
+  position: relative;
+  background: #ed9e37;
+  color: #fff;
+  width: auto;
+  font-size: 1.25em;
+  padding: 15px ;
+  top:-100px;
+  border: solid black;
+  display: inline-block;
+  border-radius: 15px 15px;
+  font-weight:600;
+}
+a.btnFooter:hover{
+  background: #cc6f00;
+ box-shadow: none;
 }
 .views-field-field-business-node-gallery .field-content img{
   overflow: hidden;
@@ -2186,3 +1983,414 @@ border: none;
 .node-blog .group-right .field-item:hover{
   box-shadow: 0 0 7px #542311;
 }
+/*---------------------------------------------------------
+******************** Home Page
+-----------------------------------------------------------*/
+.page-node-12 #galleria-1{
+ 
+}
+.node-promoted{
+  padding: 0 20px;
+}
+.page-node-12 #main{
+    margin: 8px 0 0 0 ;
+  padding: 10px 0 0 0;
+  /*border-top: solid 1px #BA9052;*/
+}
+.page-node-12  #content{
+  float: left;
+  margin: 10px 0 0 0 ;
+}
+.page-node-12  #sidebar-first{
+margin: 10px 0 0 0 ; 
+font-size: .95em;
+}
+.page-node-12 .region-sidebar-second{
+margin: 10px 0 0 0;
+text-align: center;
+}
+.page-node-12 .region-sidebar-second h3{
+font-family: 'BebasRegular';
+text-align:center;
+
+}
+.page-node-12 #block-views-gallery-home-block{
+  background-color: #fff;
+  overflow: hidden;
+}
+.page-node-12 .galleria-image{
+
+}
+.page-node-12 .galleria-image img{
+
+}
+.page-node-12 .group-left{
+  width: 100%;
+}
+.page-node-12 .field-name-body{
+  margin: 10px 0 0 0;
+}
+/*---------------------------------------------------------
+******************** Projects Page
+-----------------------------------------------------------*/
+.page-node-46 .region-content{
+  overflow: hidden;
+  width: 99%;
+  margin: 0 auto
+}
+.page-node-46 .region-content h2{
+  color:#683C03
+}
+.page-node-46  .views-row-1 .views-field-view-node span.field-content{
+   text-align: right;
+ width: 95%;
+ display: inline-block;
+}
+.page-node-46  .views-row-2  .views-field-view-node span.field-content{
+ text-align: right;
+ width: 95%;
+ display: inline-block;
+}
+#block-views-most-recent-business-block{
+  border-right: solid 1px #754220;
+  width: 50%;
+  height: 370px;;
+  overflow: hidden;
+  margin: 0 10px 0 0;
+  float: left;
+}
+#block-views-most-recent-business-block .views-row{
+  float: left;
+  height: auto;
+  margin: 0px 0 0 0;
+  overflow: hidden;
+  height: 150px;
+}
+#block-views-most-recent-business-block .content{
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  padding: 0 30px 0 0px;
+
+}
+#block-views-most-recent-business-block .content .views-field-field-project-gallery{
+  width: 45%;
+  height: 100px; 
+  overflow: hidden;
+  float: left;
+  margin: 0 5px 0 0;
+}
+#block-views-most-recent-business-block .content .views-field-field-project-gallery img{
+  width: 100%;
+  height: 100%;
+  
+}
+#block-views-most-recent-business-block .content .views-field-body{
+  width: 45%;
+  height: 120px;
+  overflow: hidden;
+  padding: 0 20px 0 0;
+  float: right;
+  color: #555;
+}
+.view-most-recent-business .pager{
+  color:#555;
+}
+/******************************************
+---------most recent residential
+******************************************/
+#block-views-most-recent-residential-block{
+  width: 46%;
+  overflow: hidden;
+  float: left;
+  margin: 0 0 0 5px;
+  height: 370px;
+}
+#block-views-most-recent-residential-block .views-row{
+  float: left;
+  height: auto;
+  margin: 0px 0 0 0;
+  overflow: hidden;
+ height: 150px;
+}
+#block-views-most-recent-residential-block .content{
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  padding: 0 10px 0 0px;
+  color: #555
+
+}
+#block-views-most-recent-residential-block .content .views-field-field-project-gallery{
+  width: 45%;
+  height: 100px; 
+  overflow: hidden;
+  float: left;
+  margin: 0 5px 0 0;
+}
+#block-views-most-recent-residential-block .content .views-field-field-project-gallery img{
+  width: 100%;
+  height: 100%;
+ 
+}
+#block-views-most-recent-residential-block .content .views-field-body{
+  width: 45%;
+  overflow: hidden;
+  height: 120px;
+  padding: 0 10px 0 0;
+  float: right;
+}
+.page-node-46 .pager{
+  margin: 0;
+  width: 98%!important;
+  display: inline-block;
+  padding: 0 0 0 0;
+}
+.page-node-46 .pager .pager-previous {
+margin: 0 0 0 35%;
+}
+/*---------------------------------------------------------
+******************** Business Listing Page
+-----------------------------------------------------------*/
+.view-display-id-page_2{
+  width: 95%;
+  margin: 10px auto 0 auto;
+  overflow:hidden;
+}
+.view-display-id-page_2 .views-row{
+  margin: 15px 10px 15px 0;
+  padding: 0;
+  overflow: hidden;
+  width: 172px;
+  min-height: 290px;
+  float: left;
+  color: #555
+
+} 
+.view-display-id-page_2 .views-row .views-field-title{
+  font-size: 1.30em;
+  margin-bottom: 10px;
+  min-height: 40px; 
+}
+.view-display-id-page_2 .views-field-body{
+  overflow: hidden;
+  height:120px;
+  margin: 0 0 5px 0;
+}
+
+.view-display-id-page_2 .views-field-field-project-gallery{
+  width: 100%;
+  overflow: hidden;
+  height: 120px;
+  margin: 0 0 10px 0; 
+}
+.tint {  
+  position: relative;  
+  float: left;  
+  cursor: pointer;  
+}  
+.tint:before {  
+  content: "";  
+  display: block;  
+  position: absolute;  
+  top: 0;  
+  bottom: 0;  
+  left: 0;  
+  right: 0;  
+  background: rgba(225,225,225, 0.1);  
+  -moz-transition: background .3s linear;  
+  -webkit-transition: background .3s linear;  
+  -ms-transition: background .3s linear;  
+  -o-transition: background .3s linear;  
+  transition: background .3s linear;  
+}  
+  
+.tint:hover:before {  
+     /* background: rgba(243,156,18, 0.6);*/
+     background: rgba(255,255,255, 0.4);   
+}  
+.view-display-id-page_2 .views-field-field-project-gallery:hover{
+    /*box-shadow: 0 0 10px #A88273*/
+}
+.view-display-id-page_2 .views-field-field-project-gallery img{
+  width: 100%;
+  height: 100%;
+
+ 
+}
+/*---------------------------------------------------------
+******************** Residential Listing Page
+-----------------------------------------------------------*/
+.view-display-id-page_3{
+  width: 95%;
+  margin: 10px auto 0 auto;
+  overflow:hidden;
+}
+
+.view-display-id-page_3 .views-row{
+  margin: 15px 10px 15px 0;
+  padding: 0;
+  overflow: hidden;
+  width: 172px;
+  min-height: 290px;
+  float: left;
+  color: #555
+
+} 
+.view-display-id-page_3 .views-row .views-field-title{
+  font-size: 1.30em;
+  margin-bottom: 10px;
+  min-height: 40px; 
+}
+.view-display-id-page_3 .views-field-body{
+  overflow: hidden;
+  height:120px;
+  margin: 0 0 5px 0;
+}
+.view-display-id-page_3 .views-field-field-project-gallery{
+  width: 100%;
+  overflow: hidden;
+  height: 120px;
+  margin: 0 0 10px 0;
+}
+.view-display-id-page_3 .views-field-field-project-gallery:hover{
+  /*box-shadow: 0 0 10px */
+}
+.view-display-id-page_3 .views-field-field-project-gallery img{
+  width: 100%;
+  height: 100%;
+}
+/*---------------------------------------------------------
+******************** About Page
+-----------------------------------------------------------*/
+.page-node-32 img{
+}
+.page-node-32 .group-right{
+width: 31%;
+padding: 10px;
+border-left: solid 1px #ddd;
+}
+.page-node-32 .group-right img{
+  margin: 0 10%;
+}
+.page-node-32 .group-right .field-name-field-basic-page-additional-text{
+  text-align: center justify;
+  
+}
+/*---------------------------------------------------------
+******************** Estimates
+-----------------------------------------------------------*/
+.page-node-4 .group-left{
+  width: 45%;
+  
+
+}
+.page-node-4 .group-right{
+  width: 50%;
+   min-height: 200px;
+  border-left: dotted 1px;
+    margin: 0 0px 0 10px;
+    padding: 0 0px 0 20px;
+}
+#webform-client-form-4{
+}
+#webform-client-form-4 input{
+  width: 95%;
+  display:inline-block;
+}
+.page-node-4 .group-right .description{
+  color:#eaa306;
+}
+
+/*---------------------------------------------------------
+******************** Contact
+-----------------------------------------------------------*/
+.page-node-6 .group-left{
+  width: 45%;
+  
+
+}
+.page-node-6 .group-right{
+  width: 50%;
+  min-height: 200px;
+  border-left: dotted 1px;
+    margin: 0 0px 0 10px;
+    padding: 0 0px 0 20px;
+}
+#webform-client-form-6 input{
+  width: 95%;
+  display:inline-block;
+}
+.page-node-6 .group-right .description{
+  color:#eaa306;
+}
+/*---------------------------------------------------------
+******************** NEWS
+-----------------------------------------------------------*/
+.node-type-news .group-left{
+ width: 60%
+}
+.node-type-news .group-right{
+
+}
+.node-type-news .group-right img{
+ width: 100%;
+ height: auto;
+ float: left;
+ border-radius: 10px 5px 10px 5px;
+ box-shadow: 0 0 5px #A88273
+}
+.node-type-news .group-right img:hover{
+
+ /*box-shadow: 0 0 10px */
+}
+/*---------------------------------------------------------
+******************** News Side Bar
+-----------------------------------------------------------*/
+.view-news-sidebar .views-field-title{
+  border-bottom: solid 1px #FDE997;
+  margin: 5px 0 0 0 ;
+  padding: 5px 0;
+  background: #fff;
+  font-weight: 600;
+}
+
+.view-news-sidebar  p{
+margin: 10px 0 0 0 ; 
+font-size: .95em;
+}
+.ajax-progress-throbber{
+  border: solid;
+  display: none!important;
+}
+.view-news-sidebar .views-row-2{
+  padding-top:20px;
+}
+/*---------------------------------------------------------
+******************** Footer Tryptic
+-----------------------------------------------------------*/
+.region-triptych-first,
+.region-triptych-middle,
+.region-triptych-last {
+  /*background: #fff;*/
+    font-size: .9em;
+    color: #9F4A00;
+}
+.region-triptych-middle{
+
+}
+.region-triptych-middle #block-block-5{
+  display: block;
+  text-align: center;
+}
+#footer_logo {
+  width: 100px;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 0 0;
+}
+.region-triptych-last{
+  text-align: right;
+}
+

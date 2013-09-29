@@ -26,15 +26,18 @@ Drupal.behaviors.webform_ajax = {
 
     // Bind Ajax behaviors to Webform confirmation screen's "Go back to form" link.
     $('.links a:not(.ajax-processed)', context).addClass('ajax-processed').each(function () {
-      wrapper_id = $(this).parents('[id^=webform-ajax-wrapper]').attr('id');
-      setting = settings.webform_ajax.wrappers[wrapper_id];
+      $wrapper = $(this).parents('[id^=webform-ajax-wrapper]');
+      if ($wrapper.length) {
+        wrapper_id = $wrapper.attr('id');
+        setting = settings.webform_ajax.wrappers[wrapper_id];
 
-      var element_settings = ajax_element_settings_defaults;
-      element_settings.url += setting.nid + '/' + setting.wrapper_id;
-      element_settings.selector += setting.wrapper_id;
-      element_settings.wrapper += setting.wrapper_id;
+        var element_settings = ajax_element_settings_defaults;
+        element_settings.url += setting.nid + '/' + setting.wrapper_id;
+        element_settings.selector += setting.wrapper_id;
+        element_settings.wrapper += setting.wrapper_id;
 
-      Drupal.ajax[setting.wrapper_id] = new Drupal.ajax(setting.wrapper_id, this, element_settings);
+        Drupal.ajax[setting.wrapper_id] = new Drupal.ajax(setting.wrapper_id, this, element_settings);
+      }
     });
 
     // If module set a 'reload' setting, then retrieve the Webform with AJAX.

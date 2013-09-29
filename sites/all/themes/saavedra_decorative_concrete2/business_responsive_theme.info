@@ -1,0 +1,41 @@
+name = saavedra_decorative_concrete2
+description = business responsive theme is a responsive theme its perfect for all sorts of corporate and small business websites: for support <b>zymphonies@gmail.com, www.zymphonies.com</b>
+core = 7.x
+
+engine = phptemplate
+stylesheets[all][] = style.css
+stylesheets[all][] = media.css
+scripts[] = js/custom.js
+
+regions[sidebar_first]  = First Sidebar
+regions[sidebar_second] = Second Sidebar
+regions[slideshow]      = Slideshow
+regions[front_welcome]  = Front Welcome
+regions[top_first]      = First top
+regions[top_second]     = Second top
+regions[top_third]      = Third top
+regions[content]        = Content
+regions[content_top]    = Content Top
+regions[footer]         = Footer
+regions[footer_first]   = First Bottom
+regions[footer_second]  = Second Bottom
+regions[footer_third]   = Third Bottom
+features[] = logo
+features[] = name
+features[] = slogan
+features[] = node_user_picture
+features[] = comment_user_picture
+features[] = comment_user_verification
+features[] = favicon
+features[] = main_menu
+features[] = secondary_menu
+settings[breadcrumbs]  = 1
+settings[social_links]  = 1
+settings[twitter_username] = "shanidkv"
+settings[facebook_username] = "shanidkv"
+; Information added by drupal.org packaging script on 2013-05-16
+version = "7.x-2.0"
+core = "7.x"
+project = "business_responsive_theme"
+datestamp = "1368725721"
+

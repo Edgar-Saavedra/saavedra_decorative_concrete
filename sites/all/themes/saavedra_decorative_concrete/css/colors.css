@@ -3,7 +3,7 @@
 
 body,
 body.overlay {
-  color: #19120C;
+  color: #332e20;
 }
 .comment .comment-arrow {
   border-color: #ffffff;
@@ -35,7 +35,7 @@ a:active {
   color: #DB7856;
 }#page-wrapper,
 #footer-wrapper {
-  background: #292929;
+  background: #CC6F00;
 }
 .region-header,
 .region-header a,

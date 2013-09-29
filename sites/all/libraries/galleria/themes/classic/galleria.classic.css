@@ -5,7 +5,8 @@
 .galleria-container {
     position: relative;
     overflow: hidden;
-    background: #ddd;
+    background: #fff;
+    margin-top: 20px;
 }
 .galleria-container img {
     -moz-user-select: none;
@@ -17,15 +18,15 @@
 .galleria-stage {
     position: absolute;
     top: 100px;
-    bottom: 0px;
+    top: 0px;
     width: 100%;
     overflow:hidden;
     height: 400px;
 }
 .galleria-thumbnails-container {
     height: 50px;
-    bottom: 0;
-    position: relative;
+    bottom: 40px;
+    position: absolute;
     z-index: 2;
     top: 
     left: 10px;
@@ -37,9 +38,8 @@
 .galleria-thumbnails .galleria-image {
     height: 90px;
     width: 60px;
-    background: #000;
+    background: #fff;
     margin: 0 5px 0 0;
-    border: 1px solid #000;
     float: left;
     cursor: pointer;
 }

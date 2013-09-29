@@ -53,6 +53,7 @@
   </title>
   <?php print $styles; ?>
   <?php print $scripts; ?>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,400italic,600,600italic,700' rel='stylesheet' type='text/css'>
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
   <div id="skip-link">

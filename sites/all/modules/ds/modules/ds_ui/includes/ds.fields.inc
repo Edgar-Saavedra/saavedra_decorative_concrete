@@ -173,7 +173,7 @@ function ds_shared_form(&$form, $field) {
 
   $form['ui_limit'] = array(
     '#title' => t('Limit field'),
-    '#description' => t('Limit this field on field UI per bundles and/or view modes. The values are in the form of $bundle|$view_mode. You may use * to select all. Enter multiple values per line.'),
+    '#description' => t('Limit this field on field UI per bundles and/or view modes. The values are in the form of $bundle|$view_mode. You may use * to select all. Enter one value per line.'),
     '#type' => 'textarea',
     '#default_value' => $field->ui_limit,
   );
@@ -209,7 +209,7 @@ function ds_shared_form_validate($form, &$form_state) {
   $field->properties = array();
   $field->field = $form_state['values']['field'];
   $field->label = $form_state['values']['name'];
-  $field->ui_limit = $form_state['values']['ui_limit'];
+  $field->ui_limit = str_replace("\r", '', $form_state['values']['ui_limit']);
 
   $entities = $form_state['values']['entities'];
   foreach ($entities as $key => $value) {

@@ -162,7 +162,12 @@
         )); ?>
       </div> <!-- /#secondary-menu -->
     <?php endif; ?>
-    <a href="#"><img src="/<?php print $directory; ?>/images/estimateButton2.png"  alt="Get An Estimate!"></a>
+    <div>
+      <a href="/estimates"><div class="btn">
+          Get An Estimate!
+      </div></a>
+    </div>
+    <!--a href="#"><img src="/<?php print $directory; ?>/images/estimateButton2.png"  alt="Get An Estimate!"></a-->
   </div>
 </div> <!-- /.section, /#header -->
 
@@ -225,15 +230,17 @@
 
   </div></div> <!-- /#main, /#main-wrapper -->
   <!--estimate button-->
-<div id='estimateButtonfooter'>
+<!--div id='estimateButtonfooter'>
   <div id='footerLine1'></div>
   <div id='footerLine2'></div>
   <div id='footerLine3'></div>
-  <a href="#"><img src="/<?php print $directory; ?>/images/estimateButton-01.png"  alt="Get An Estimate!"></a>
-</div>
+  <a href="#" class='btnFooter'>Get An Estimate!</a>
+</div-->
   <!--Estimate Button END-->
 
-  <?php if ($page['triptych_first'] || $page['triptych_middle'] || $page['triptych_last']): ?>
+
+
+</div>  <?php if ($page['triptych_first'] || $page['triptych_middle'] || $page['triptych_last']): ?>
     <div id="triptych-wrapper"><div id="triptych" class="clearfix">
       <?php print render($page['triptych_first']); ?>
       <?php print render($page['triptych_middle']); ?>
@@ -241,7 +248,7 @@
     </div></div> <!-- /#triptych, /#triptych-wrapper -->
   <?php endif; ?>
 </div>
-  <div id="footer-wrapper"><div class="section">
+  <!--div id="footer-wrapper"><div class="section">
 
     <?php if ($page['footer_firstcolumn'] || $page['footer_secondcolumn'] || $page['footer_thirdcolumn'] || $page['footer_fourthcolumn']): ?>
       <div id="footer-columns" class="clearfix">
@@ -249,15 +256,13 @@
         <?php print render($page['footer_secondcolumn']); ?>
         <?php print render($page['footer_thirdcolumn']); ?>
         <?php print render($page['footer_fourthcolumn']); ?>
-      </div> <!-- /#footer-columns -->
+      </div> <!-- /#footer-columns ->
     <?php endif; ?>
 
     <?php if ($page['footer']): ?>
       <div id="footer" class="clearfix">
         <?php print render($page['footer']); ?>
-      </div> <!-- /#footer -->
+      </div> <!-- /#footer ->
     <?php endif; ?>
 
-  </div></div> <!-- /.section, /#footer-wrapper -->
-
-</div></div> <!-- /#page, /#page-wrapper -->
+  </div></div--> <!-- /.section, /#footer-wrapper --></div> <!-- /#page, /#page-wrapper -->
